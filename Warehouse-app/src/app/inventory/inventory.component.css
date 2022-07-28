@@ -1,0 +1,31 @@
+table.tbs {
+    table-layout: fixed;
+    width: 800px;
+}
+
+
+table.tbs td.tds40 {
+    width: 40px;
+}
+
+table.tbs td.tds40c {
+    width: 40px;
+    text-align: left;
+}
+
+table.tbs td.tds95 {
+    width: 95px;
+}
+
+table.tbs th.ths40 {
+    width: 40px;
+    text-align: left;
+    font-weight: bolder;
+}
+
+table.tbs th.ths95 {
+    width: 95px;
+    text-align: left;
+    font-weight: bolder;
+}
+

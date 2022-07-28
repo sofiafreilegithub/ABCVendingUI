@@ -1,0 +1,22 @@
+    <button class="btn btn-primary" (click)="updateInventory()">
+      Refresh Inventory
+    </button>
+
+    <div>
+        <table class="tbs">
+            <tr>
+                <th class="ths40">Warehouse</th>
+                <th class="ths40">Category</th>
+                <th class="ths95">Product Description</th>
+                <th class="ths40">Quantity</th>
+            </tr>
+            <ng-container *ngFor="let product of inventory$ | async">
+                <tr *ngIf="product.warehouseId == 1">
+                    <td classs="tds40">{{ product.warehouseName }}</td>
+                    <td classs="tds40">{{ product.productCategoryName }}</td>                    
+                    <td classs="tds95">{{ product.productName }}</td>
+                    <td classs="tds40c">{{ product.productCount }}</td>
+                </tr>
+            </ng-container>
+        </table>
+    </div>
