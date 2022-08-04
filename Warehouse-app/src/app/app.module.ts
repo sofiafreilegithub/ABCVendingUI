@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ApiService } from './api-service';
+import { FormsModule } from '@angular/forms';
 import { InventoryComponent } from './inventory/inventory.component';
 
 @NgModule({
@@ -14,6 +15,7 @@ import { InventoryComponent } from './inventory/inventory.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule
   ],

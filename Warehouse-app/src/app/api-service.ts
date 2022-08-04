@@ -10,6 +10,7 @@ import { map } from "rxjs/operators";
 })
 export class ApiService {
   inventoryData$: BehaviorSubject<[]> = new BehaviorSubject<[]>(undefined);
+  inventoryTotals$: BehaviorSubject<[]> = new BehaviorSubject<[]>(undefined);
   constructor(private http: HttpClient) {}
 
   public makeRequest() {
@@ -26,12 +27,11 @@ export class ApiService {
       });
   }
 
-  public updateInventory() {
+  public updateInventory(productToUpdate: string, newQty: number) {
     let options = { headers: new HttpHeaders ({ 'Content-Type' : 'application/json ', })}
-    //random number to simulate inventory changes, calling the api with this parameter will substract from existing unit count
-    const random = Math.floor(Math.random() * (99 - 10)) + 10; 
-    const resp$ = this.http
-      .get("https://localhost:44378/api/updateinventory/" + random.toString(), options )
+    const apiUrl = `https://localhost:44378/api/updateinventory/1/${productToUpdate}/${newQty}`;   // hardcoded to warehouse 1
+    this.http
+      .get(apiUrl, options )
       .pipe(
         map((response: any) => {
           return response;
@@ -39,6 +39,7 @@ export class ApiService {
       )
       .subscribe((data: any) => {
         this.inventoryData$.next(data);
+        this.inventoryTotals$.next(data);
       });
   }
 }

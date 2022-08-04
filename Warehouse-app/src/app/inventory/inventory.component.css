@@ -1,8 +1,20 @@
+.hea3 {
+    padding-top: 50px;
+}
+
+.pt20 {
+    padding-top: 20px;
+}
+
 table.tbs {
     table-layout: fixed;
     width: 800px;
 }
 
+table.tbs1 {
+    table-layout: fixed;
+    width: 600;
+}
 
 table.tbs td.tds40 {
     width: 40px;
